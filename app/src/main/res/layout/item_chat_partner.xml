@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/psa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@color/colorPrimary"
+            android:layout_margin="4dp"
+            />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="네 구해다 드릴게요 돈만주새요@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@."
+            android:padding="8dp"
+            android:maxEms="18"
+
+            android:layout_gravity="center"
+            android:background="@drawable/btn_color_gray"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="4dp"
+            android:text="4:29"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
