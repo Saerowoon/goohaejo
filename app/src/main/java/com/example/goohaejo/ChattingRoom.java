@@ -16,12 +16,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Chat extends AppCompatActivity {
+public class ChattingRoom extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_chatting_room);
         ImageView close = findViewById(R.id.close);
         final EditText message=findViewById(R.id.inputchat);
         TextView send = findViewById(R.id.send);
@@ -126,5 +126,6 @@ class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder> {
             super(itemView);
             message=itemView.findViewById(R.id.message);
         }
+
     }
 }
