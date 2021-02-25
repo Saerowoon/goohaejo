@@ -4,30 +4,25 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/abc_vector_test"
+        android:icon="@drawable/home"
 
-        android:title="구해요"
+        android:title="홈"
         />
     <item
         android:id="@+id/action_talk"
-        android:icon="@drawable/abc_vector_test"
+        android:icon="@drawable/airplane"
 
         android:title="떠나요" />
 
     <item
-        android:id="@+id/action_account"
-        android:icon="@drawable/abc_vector_test"
-
-        android:title="홈" />
-    <item
         android:id="@+id/action_calendar"
-        android:icon="@drawable/abc_vector_test"
+        android:icon="@drawable/chat"
 
         android:title="채팅" />
 
     <item
         android:id="@+id/action_setting"
-        android:icon="@drawable/abc_vector_test"
+        android:icon="@drawable/mypage"
         android:title="마이페이지" />
 
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,52 +7,58 @@
     tools:context=".Chat">
 
 
-
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="4dp"
-        android:paddingRight="4dp"
+        android:paddingRight="4dp">
 
-        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="대화"
             android:layout_marginTop="5dp"
-
+            android:paddingLeft="20dp"
+            android:text="대화"
             android:textColor="#000"
             android:textSize="24dp"
-            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <include layout="@layout/item_chat_me"/>
-        <include layout="@layout/item_chat_partner"/>
-        <include layout="@layout/item_chat_partner"/>
-        <include layout="@layout/item_chat_me"/>
+        <include layout="@layout/item_chat_me" />
+
+        <include layout="@layout/item_chat_partner" />
+
+        <include layout="@layout/item_chat_partner" />
+
+        <include layout="@layout/item_chat_me" />
 
     </LinearLayout>
 
 
     <EditText
         android:id="@+id/inputchat"
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="50dp"
-        android:layout_marginRight="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint = "#808080"
+        android:layout_margin="4dp"
+        android:backgroundTint="#808080"
+
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <TextView
         android:id="@+id/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/btn_color"
         android:text="보내기"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textColor="#fff"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/inputchat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputchat"
+        app:layout_constraintTop_toTopOf="@+id/inputchat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
