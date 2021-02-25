@@ -64,7 +64,7 @@ public class WriteForGoOut extends AppCompatActivity {
                             goout_data[1]=city_write;
                             goout_data[2]=message_write;
 
-                            Intent intent=new Intent(parent.getContext(),GoOut.class);
+                            Intent intent=new Intent(parent.getContext(),MainLeave.class);
                             intent.putExtra("goout_data",goout_data);
                             startActivity(intent);
                         }
