@@ -32,12 +32,14 @@
             android:gravity="center|start"
             >
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@color/colorPrimary"
                 android:layout_marginRight="10dp"
                 />
             <TextView
+                android:id="@+id/nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Username"
@@ -51,6 +53,7 @@
                 android:textColor="#9A9A9A"
                 />
             <TextView
+                android:id="@+id/country_and_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="호주 | 멜버른 으로 떠나요"
@@ -60,6 +63,7 @@
                 />
         </LinearLayout>
         <TextView
+            android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000"
@@ -67,9 +71,10 @@
             android:text="2020/3/2 일부터 3/5일까지 멜버른가요 부탁할거 있으면 채팅주세요"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/go_to_chat"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:layout_gravity="right"
             android:text="채팅 바로가기"/>
     </LinearLayout>
 

@@ -14,25 +14,39 @@
         android:orientation="vertical"
         android:paddingLeft="4dp"
         android:paddingRight="4dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="20dp"
-            android:text="대화"
-            android:textColor="#000"
-            android:textSize="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center|start"
+            android:padding="4dp"
+            >
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/close"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="대화"
+                android:textColor="#000"
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <include layout="@layout/item_chat_me" />
+        </LinearLayout>
 
-        <include layout="@layout/item_chat_partner" />
 
-        <include layout="@layout/item_chat_partner" />
 
-        <include layout="@layout/item_chat_me" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"/>
+
 
     </LinearLayout>
 
