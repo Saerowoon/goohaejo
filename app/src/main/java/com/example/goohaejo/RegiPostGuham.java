@@ -39,6 +39,7 @@ public class RegiPostGuham extends AppCompatActivity {
     EditText et_product,et_city,et_price,et_fee;
     ImageView iv_regiPostGuhamPicture,iv_regiPostGuham,iv_back;
 
+    String product, city, price, fee;
     String uriString = "";
 
     private static final int MY_PERMISSION_CAMERA = 1111;
@@ -50,13 +51,13 @@ public class RegiPostGuham extends AppCompatActivity {
         setContentView(R.layout.activity_regi_post_guham);
 
         et_product = findViewById(R.id.et_product);
-        final String product = et_product.getText().toString();
+
         et_city = findViewById(R.id.et_city);
-        String city = et_product.getText().toString();
+
         et_price = findViewById(R.id.et_price);
-        String price = et_product.getText().toString();
+
         et_fee = findViewById(R.id.et_fee);
-        String fee = et_product.getText().toString();
+
 
         iv_regiPostGuhamPicture = findViewById(R.id.iv_regiPostGuhamPicture);
         iv_regiPostGuhamPicture.setOnClickListener(new View.OnClickListener() {
@@ -116,9 +117,16 @@ public class RegiPostGuham extends AppCompatActivity {
             public void onClick(View view) {
                 //어디에서 어디로
                 Intent intent = new Intent(RegiPostGuham.this,MainActivity.class);
-                    //다른 정보가 있다면 키값 + 데이터
-                	intent.putExtra("product",product);
+                product = et_product.getText().toString();
+                city = et_city.getText().toString();
+                fee = et_fee.getText().toString();
+                price = et_price.getText().toString();
 
+                    //다른 정보가 있다면 키값 + 데이터
+                	intent.putExtra("title",product);
+                    intent.putExtra("region",city);
+                    intent.putExtra("fee",fee);
+                    intent.putExtra("img",uriString);
                 	//인텐트 실행
                 	startActivity(intent);
             }

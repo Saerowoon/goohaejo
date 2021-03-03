@@ -46,11 +46,10 @@
         </LinearLayout>
     </LinearLayout>
 
-        <include layout="@layout/item_goohaejo"/>        <include layout="@layout/item_goohaejo"/>
-        <include layout="@layout/item_goohaejo"/>
-        <include layout="@layout/item_goohaejo"/>
-        <include layout="@layout/item_goohaejo"/>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_goohaejo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>

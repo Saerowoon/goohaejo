@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_goohaejo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
     android:background="#fff"
     android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    >
+    android:paddingBottom="8dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_goohaeho"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="#5361"
@@ -26,37 +26,41 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_goohaeho"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="구테타마 두더지게임 타타키 장난감 구해주실분!!"
-            android:textColor="#111"
             android:layout_marginBottom="5dp"
-            />
+            android:text="구테타마 두더지게임 타타키 장난감 구해주실분!!"
+            android:textColor="#111" />
+
         <TextView
+            android:id="@+id/tv_region"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="일산동구 | 5시간 전"
             android:layout_marginBottom="5dp"
 
-            android:textColor="#9A9A9A"
-            />
+            android:text="일산동구 | 5시간 전"
+            android:textColor="#9A9A9A" />
+
         <TextView
+            android:id="@+id/tv_fee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10,000원"
             android:layout_marginBottom="5dp"
-            android:textColor="#111"
-            />
+            android:text="10,000원"
+            android:textColor="#111" />
+
         <TextView
+            android:id="@+id/tv_like"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom|end"
             android:text="♡ 30"
-            android:textColor="#111"
-            />
+            android:textColor="#111" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
