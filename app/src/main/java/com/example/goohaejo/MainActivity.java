@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ImageView iv_add;
 
-    String title, rigion, fee, img;
+    String title, region, fee, img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Goohaejodata goohaejodata = new Goohaejodata();
                     title = bundle.getString("title");
-                    rigion = bundle.getString("region");
+                    region = bundle.getString("region");
                     fee = bundle.getString("fee");
                     img = bundle.getString("img");
                     Log.d("구해줘액티비티", "제목 : " + title);
 
                     goohaejodata.title = title;
-                    goohaejodata.rigion = rigion;
+                    goohaejodata.region = region;
                     goohaejodata.fee = fee;
                     goohaejodata.img = img;
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             Goohaejodata goohaejodata = new Goohaejodata();
             goohaejodata.title = "과자";
-            goohaejodata.rigion = "미국";
+            goohaejodata.region = "미국";
             goohaejodata.fee = "10,000";
             adapter.addgoohaejo(goohaejodata);
 
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull MainAdapter.ViewHolder holder, int position) {
             Goohaejodata text = mData.get(position);
             holder.tv_title.setText(text.title);
-            holder.tv_region.setText(text.rigion);
+            holder.tv_region.setText(text.region);
             holder.tv_fee.setText(text.fee);
             Glide.with(holder.iv_goohaeho).load(text.getImg()).centerCrop().into(holder.iv_goohaeho);
 
@@ -210,43 +210,42 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class Goohaejodata {
+}
+class Goohaejodata {
 
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public String getRigion() {
-            return rigion;
-        }
-
-        public void setRigion(String rigion) {
-            this.rigion = rigion;
-        }
-
-        public String getFee() {
-            return fee;
-        }
-
-        public void setFee(String fee) {
-            this.fee = fee;
-        }
-
-        public String getImg() {
-            return img;
-        }
-
-        public void setImg(String img) {
-            this.img = img;
-        }
-
-        String title;
-        String rigion;
-        String fee;
-        String img;
+    public String getTitle() {
+        return title;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getRigion() {
+        return region;
+    }
+
+    public void setRigion(String rigion) {
+        this.region = rigion;
+    }
+
+    public String getFee() {
+        return fee;
+    }
+
+    public void setFee(String fee) {
+        this.fee = fee;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    String title, region, fee, img;
+
+
 }
