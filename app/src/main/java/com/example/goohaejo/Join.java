@@ -17,6 +17,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Join extends AppCompatActivity {
 
     Button bt_join;
@@ -46,7 +57,7 @@ public class Join extends AppCompatActivity {
         textView_password_wrong = findViewById(R.id.textView_password_wrong);
         ImageView_password_wrong = findViewById(R.id.ImageView_password_wrong);
         ImageView_password_right = findViewById(R.id.ImageView_password_right);
-
+        editText_Nickname=findViewById(R.id.editText_Nickname);
         //나가기 버튼
         iv_cancel2 = findViewById(R.id.iv_cancel2);
         iv_cancel2.setOnClickListener(new View.OnClickListener() {
@@ -112,13 +123,49 @@ public class Join extends AppCompatActivity {
         bt_join = findViewById(R.id.button_Join_Complete);
         bt_join.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 if(check_email){
 
 
-                    Toast.makeText(Join.this,"회원가입이 완료되었습니다.",Toast.LENGTH_SHORT).show();
-                    finish();
 
+                    String email = editText_EmailAddress.getText().toString();
+                    String password=editText_Password.getText().toString();
+                    String nickname=editText_Nickname.getText().toString();
+
+                    JSONObject requestJsonObject = new JSONObject();
+                    try {
+                        requestJsonObject.put("email", email);
+                        requestJsonObject.put("password", password);
+                        requestJsonObject.put("nickname", nickname);
+
+                    } catch(JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    RequestQueue queue = Volley.newRequestQueue(view.getContext());
+                    String url ="http://52.79.251.249/join";
+
+                    // Request a string response from the provided URL.
+                    JsonObjectRequest  stringRequest = new JsonObjectRequest(Request.Method.GET, url,requestJsonObject,
+                            new Response.Listener() {
+                                @Override
+                                public void onResponse(Object response) {
+                                    Toast.makeText(Join.this,"회원가입이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(view.getContext(),"전송완료",Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(view.getContext(),"오류123",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    // Add the request to the RequestQueue.
+                    queue.add(stringRequest);
+
+
+                //
 
                 }else{
                     Toast.makeText(Join.this,"메일 중복확인을 해주세요",Toast.LENGTH_SHORT).show();
